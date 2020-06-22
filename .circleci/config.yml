@@ -1,12 +1,13 @@
 version: 2.1
-    jobs:
-        printhello:
-            docker:
-                - image: alpine
-            steps:
-                - checkout
-                - run:
-                    name: Hello printhello
-                    command: |
-                        echo 'Hello World'
-                        echo 'This is from Herves'
+
+jobs:
+  printhello:
+    docker:
+      - image: alpine
+    steps:
+      - checkout
+      - run:
+          name: Hello printhello
+          command: |
+            echo 'Hello World'
+            echo 'This is from Herves'
