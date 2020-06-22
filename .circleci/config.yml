@@ -28,6 +28,14 @@ jobs:
           name: running node in container
           command: |
             node -v
+  top-secret-build:
+    docker:
+      - image: alpine
+    steps:
+      - run:
+          name: jamesbond
+          command: |
+            echo 'Top secret needs approval'
 workflows:
   version: 2
   Example-workflow:
@@ -37,3 +45,6 @@ workflows:
           requires:
             - build
       - node-version
+      - top-secret-build:
+        requires:
+          - Hold-For-Approval
