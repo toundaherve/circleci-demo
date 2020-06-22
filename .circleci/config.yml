@@ -45,6 +45,8 @@ workflows:
           requires:
             - build
       - node-version
+      - Hold-For-Approval:
+          type: approval
       - top-secret-build:
-        requires:
-          - Hold-For-Approval
+          requires:
+            - Hold-For-Approval
