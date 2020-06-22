@@ -11,3 +11,29 @@ jobs:
           command: |
             echo 'Hello World'
             echo 'This is from Herves'
+  build2:
+    docker:
+      - image: alpine
+    steps:
+      - run:
+          name: Second printhello
+          command: |
+            echo 'Salut le monde'
+            echo 'Ca va?'
+  node-version:
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - run:
+          name: running node in container
+          command: |
+            node -v
+workflows:
+  version: 2
+  Example-workflow:
+    jobs:
+      - build
+      - build2:
+          requires:
+            - build
+      - node-version
