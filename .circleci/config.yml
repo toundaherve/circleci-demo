@@ -19,7 +19,7 @@ jobs:
           name: Second printhello
           command: |
             echo 'Salut le monde'
-            echo 'Ca va?'
+            echo 'Ca va bien?'
   node-version:
     docker:
       - image: circleci/node:10-browsers
